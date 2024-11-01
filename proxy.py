@@ -23,10 +23,10 @@ def proxy(url):
     # Make the appropriate request
     if request.method == 'GET':
         print(f"GET request to {full_url} with headers: {headers}")
-        resp = requests.get(full_url, headers=headers, params=request.args, verify=False)
+        resp = requests.get(full_url, headers=headers, params=request.args, verify=False, timeout=None)
     elif request.method == 'POST':
         print(f"POST request to {full_url} with headers: {headers} and data: {request.form}")
-        resp = requests.post(full_url, headers=headers, data=request.form, verify=False)
+        resp = requests.post(full_url, headers=headers, data=request.form, verify=False, timeout=None)
 
     # Print response status and content
     print(f"Response status: {resp.status_code}")
